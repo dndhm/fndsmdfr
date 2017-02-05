@@ -1,0 +1,33 @@
+{
+  "name": "fndsmdfr",
+  "version": "0.0.0",
+  "description": "Felix Needham Diatonic Super Mutating Dynamic Food Replicator",
+  "main": "index.js",
+  "dependencies": {
+    "babel-core": "^6.22.1",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-stage-1": "^6.22.0",
+    "react": "^15.4.2",
+    "classnames": "^2.2.5",
+    "express": "^4.14.1",
+    "lodash": "^4.17.4",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dndhm/fndsmdfr.git"
+  },
+  "author": "Dan Needham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dndhm/fndsmdfr/issues"
+  }
+}
