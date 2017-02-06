@@ -1,8 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const fs = require('fs');
-
-const babelrc = JSON.parse(fs.readFileSync('./.babelrc').toString());
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   debug: true,
@@ -26,13 +26,15 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel',
-        exclude: /node_modules|lib/,
-        query: babelrc
+        loader: require.resolve('babel-loader'),
+        exclude: /node_modules/
       }
     ]
   },
-  plugins: [],
+  plugins: [
+    new ExtractTextPlugin('style.css'),
+    new CopyWebpackPlugin([ { from: 'public/index.html', to: 'index.html' } ])
+  ],
   postcss: function () {
     return [
       require('precss'),
