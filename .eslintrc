@@ -10,7 +10,6 @@
     "Promise": true
   },
   "plugins": [
-    "no-only-tests",
     "react"
   ],
   "extends": "eslint:recommended",
@@ -22,7 +21,6 @@
     "key-spacing": 1,
     "no-multi-spaces": "error",
     "keyword-spacing": 2,
-    "no-only-tests/no-only-tests": 2,
     "no-unused-vars": 1,
     "object-curly-spacing": [1, "always"],
     "quotes": ["warn", "single", { "avoidEscape": true }],
