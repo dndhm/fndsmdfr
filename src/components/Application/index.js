@@ -1,7 +1,10 @@
 import React from 'react';
+import styles from './style.css';
 
 export default () => {
   return (
-    <h1>FNDyugiuygiyuSMDFR</h1>
+    <main>
+      <h1>FNDSMDFR</h1>
+    </main>
   );
 };
