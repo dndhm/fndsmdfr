@@ -38,16 +38,17 @@ main {
   background: crtBlue;
   height: 100%;
   margin: 0;
+  overflow: hidden;
   padding: 0;
   position: relative;
   width: 100%;
 
   &:after {
-    animation: scanlines 3s linear infinite;
+    /*animation: scanlines 3s linear infinite;*/
     background: linear-gradient(
       to bottom,
       transparent 50%,
-      rgba(0,0,0,0.3) 51%
+      rgba(0,0,0,0.2) 51%
     );
     background-size: 100% 4px;
     bottom: 0;

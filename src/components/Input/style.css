@@ -1,0 +1,63 @@
+@value labelPad: 60px;
+
+@keyframes blink {
+  from {
+    opacity: .8;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.label {
+  bottom: labelPad;
+  color: #fff;
+  display: block;
+  left: labelPad;
+  position: absolute;
+  right: labelPad;
+  top: labelPad;
+  z-index: 2;
+
+  .labelWrap {
+    display: inline;
+    line-height: 1;
+    overflow: visible;
+    position: relative;
+    white-space: pre-wrap;
+
+    &:after {
+      animation: blink .8s ease-in-out infinite;
+      background: #fff;
+      bottom: 7px;
+      content: '';
+      height: .8em;
+      margin-top: -.4em;
+      position: absolute;
+      right: -25px;
+      width: 20px;
+    }
+  }
+}
+
+.input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  bottom: 0;
+  left: 0;
+  outline: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}

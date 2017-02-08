@@ -7,16 +7,6 @@ import { spy } from 'sinon';
 import TextArea from './';
 
 describe('TextArea', () => {
-  it('should display placeholder', () => {
-    const component = shallow(
-      <TextArea
-        placeholder="Placeholder text"
-      />
-    );
-
-    expect(component.find('textarea').props().placeholder).to.eql('Placeholder text');
-  });
-
   it('should call callback when value length reaches threshold', () => {
     const callbackSpy = spy();
     const component = shallow(

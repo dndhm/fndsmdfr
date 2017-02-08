@@ -1,10 +1,15 @@
 import React from 'react';
-// import styles from './style.css';
+
+import Input from '../Input';
+require('./style.css');
 
 export default () => {
   return (
     <main>
-      <h1>FNDSMDFR</h1>
+      <Input
+        callback={() => {}}
+        threshold={100}
+      />
     </main>
   );
 };
