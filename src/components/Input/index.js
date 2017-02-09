@@ -4,8 +4,7 @@ require('./style.css');
 class Input extends Component {
   static propTypes = {
     callback: PropTypes.func.isRequired,
-    placeholder: PropTypes.string.isRequired,
-    threshold: PropTypes.number.isRequired,
+    callbackThreshold: PropTypes.number.isRequired,
     value: PropTypes.string,
   }
 
@@ -13,16 +12,36 @@ class Input extends Component {
     value: ' ',
   };
 
+  // TODO: Fix sting formatting
+  formats = {
+    60: {
+      fn: string => `${string.slice(0, string.length - 59)}
+        if (${string.slice(string.length - 60, string.length - 50)}
+         && ${string.slice(string.length - 49, string.length - 40)}) {
+          ${string.slice(string.length - 39, string.length)}
+        }`,
+    },
+  }
+
   changeHandler = (event) => {
     const value = event.target.value;
+    const valueLength = this.state.value.length;
+    const formatLengths = Object.keys(this.formats);
+    const divisibleFormat = formatLengths.find(length => valueLength % length === 0);
 
-    if (value.length >= this.props.threshold) {
-      this.props.callback();
+    if (divisibleFormat) {
+      this.setState({
+        value: this.formats[divisibleFormat].fn(value),
+      });
+    } else {
+      this.setState({
+        value,
+      });
     }
 
-    this.setState({
-      value,
-    });
+    if (this.state.value.length >= this.props.callbackThreshold) {
+      this.props.callback();
+    }
   }
 
   render () {

@@ -8,7 +8,7 @@ export default () => {
     <main>
       <Input
         callback={() => {}}
-        threshold={100}
+        callbackThreshold={100}
       />
     </main>
   );

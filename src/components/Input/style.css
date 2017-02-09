@@ -1,6 +1,6 @@
 @value labelPad: 60px;
 
-@keyframes blink {
+@keyframes caretBlink {
   from {
     opacity: .8;
   }
@@ -33,7 +33,7 @@
     white-space: pre-wrap;
 
     &:after {
-      animation: blink .8s ease-in-out infinite;
+      animation: caretBlink .8s ease-in-out infinite;
       background: #fff;
       bottom: 7px;
       content: '';
