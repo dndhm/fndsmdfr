@@ -4,20 +4,21 @@ import { shallow } from 'enzyme';
 
 import { spy } from 'sinon';
 
-import TextArea from './';
+import Input from './';
 
 describe('TextArea', () => {
-  it('should call callback when value length reaches threshold', () => {
-    const callbackSpy = spy();
+  it('should call onChange with value', () => {
+    const onChangeSpy = spy();
     const component = shallow(
-      <TextArea
-        callback={callbackSpy}
-        threshold={10}
-        value="012345678"
+      <Input
+        callback={() => {}}
+        callbackThreshold=""
+        onChange={onChangeSpy}
+        value=""
       />
     );
 
-    component.simulate('change', '0123456789');
-    expect(callbackSpy.called).to.be.true;
+    component.find('input').simulate('change', 'X');
+    expect(onChangeSpy.calledWith('X')).to.be.true;
   });
 });

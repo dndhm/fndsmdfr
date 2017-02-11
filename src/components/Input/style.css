@@ -11,18 +11,18 @@
 
 .container {
   height: 100%;
+  overflow: hidden;
   position: relative;
   width: 100%;
 }
 
 .label {
-  bottom: labelPad;
+  bottom: 60px;
   color: #fff;
   display: block;
   left: labelPad;
   position: absolute;
   right: labelPad;
-  top: labelPad;
   z-index: 2;
 
   .labelWrap {
