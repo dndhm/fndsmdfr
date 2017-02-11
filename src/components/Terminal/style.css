@@ -14,15 +14,19 @@
   overflow: hidden;
   position: relative;
   width: 100%;
+  z-index: 1;
 }
 
 .label {
   bottom: 60px;
   color: #fff;
   display: block;
+  font-family: monospace;
+  font-size: 40px;
   left: labelPad;
   position: absolute;
   right: labelPad;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
   z-index: 2;
 
   .labelWrap {
@@ -55,6 +59,7 @@
   bottom: 0;
   left: 0;
   outline: none;
+  opacity: 0;
   position: absolute;
   right: 0;
   top: 0;

@@ -4,15 +4,13 @@ import { shallow } from 'enzyme';
 
 import { spy } from 'sinon';
 
-import Input from './';
+import Terminal from './';
 
-describe('TextArea', () => {
+describe('Terminal', () => {
   it('should call onChange with value', () => {
     const onChangeSpy = spy();
     const component = shallow(
-      <Input
-        callback={() => {}}
-        callbackThreshold=""
+      <Terminal
         onChange={onChangeSpy}
         value=""
       />

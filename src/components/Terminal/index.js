@@ -3,7 +3,6 @@ require('./style.css');
 
 class Input extends Component {
   static propTypes = {
-    callback: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
     value: PropTypes.string,
   }

@@ -1,0 +1,10 @@
+@value crtBlue from '../Styles/colours.css';
+
+.foodContainer {
+  background: crtBlue;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
