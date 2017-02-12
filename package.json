@@ -41,7 +41,8 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "build:watch": "webpack --watch --config webpack.config.js",
-    "dev": "webpack-dev-server --config webpack.config.js --hot --inline --host 0.0.0.0 --port 4000 --content-base public/",
+    "dev": "webpack-dev-server --config webpack.config.js --hot --inline --content-base public/",
+    "serve": "webpack-dev-server --config webpack.config.js --inline --host 192.168.1.107 --port 4000 --content-base public/",
     "lint": "eslint ./src",
     "test": "NODE_ENV=test mocha --require ignore-styles --require babel-register --require babel-polyfill './src/**/spec.js'",
     "test:watch": "npm run test -- -w"
