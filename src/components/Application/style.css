@@ -4,11 +4,20 @@
   from {
     background-position: 0 0;
   }
-  50% {
-    background-position: 0 50%;
+  80% {
+    background-position: 0 0;
+  }
+  83% {
+    background-position: 0 30%;
+  }
+  90% {
+    background-position: 0 100%;
+  }
+  95% {
+    background-position: 0 70%;
   }
   to {
-    background-position: 0 100%;
+    background-position: 0 0;
   }
 }
 
@@ -42,7 +51,7 @@ main {
   width: 100%;
 
   &:after {
-    animation: scanlines 3s linear infinite;
+    animation: scanlines 10s linear infinite;
     background: linear-gradient(
       to bottom,
       transparent 50%,
