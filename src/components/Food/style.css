@@ -4,7 +4,17 @@
   background: crtBlue;
   height: 100%;
   position: absolute;
+  text-align: center;
   top: 0;
   width: 100%;
   z-index: 3;
+}
+
+.foodImage {
+  height: 100%;
+  width: auto;
+}
+
+.foodAudio {
+  visibility: hidden;
 }
