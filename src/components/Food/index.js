@@ -13,11 +13,19 @@ class Food extends Component {
     types: [
       {
         image: 'images/cheeseburger.png',
-        // audio: '../public/audio/cheeseburger.mp3',
+        // audio: 'audio/cheeseburger.mp3',
       },
       {
         image: 'images/strawberry.png',
-        // audio: require('./audio/strawberry.mp3'),
+        // audio: 'audio/strawberry.mp3',
+      },
+      {
+        image: 'images/steve.png',
+        // audio: 'audio/steve.mp3',
+      },
+      {
+        image: 'images/cucumber.png',
+        // audio: 'audio/cucumber.mp3',
       },
     ],
   }
