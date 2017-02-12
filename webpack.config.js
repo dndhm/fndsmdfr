@@ -10,6 +10,10 @@ module.exports = {
   entry: {
     main: ['./src/index.js'],
   },
+  devServer: {
+    inline: true,
+    port: 4000,
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
