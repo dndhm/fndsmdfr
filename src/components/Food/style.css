@@ -1,8 +1,21 @@
 @value crtBlue from '../Styles/colours.css';
 
+@keyframes imageZoom {
+  from {
+    height: 0;
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    height: 80%;
+    -webkit-transform: rotate(360deg);
+  }
+}
+
 .foodContainer {
   background: crtBlue;
   height: 100%;
+  left: 0;
   position: absolute;
   text-align: center;
   top: 0;
@@ -11,7 +24,11 @@
 }
 
 .foodImage {
-  height: 100%;
+  animation: imageZoom 1s ease-in;
+  height: 80%;
+  left: 20%;
+  position: absolute;
+  top: 0;
   width: auto;
 }
 
