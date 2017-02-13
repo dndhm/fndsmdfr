@@ -33,6 +33,7 @@
 
 * {
   box-sizing: border-box;
+  cursor: url('./cheeseburger-cursor.png'), default;
   margin: 0;
   padding: 0;
 }

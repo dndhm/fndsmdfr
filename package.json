@@ -28,6 +28,7 @@
     "eslint": "^3.1.1",
     "eslint-plugin-react": "^5.1.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.10.0",
     "ignore-styles": "^5.0.1",
     "mocha": "^3.0.2",
     "postcss": "^5.2.0",
@@ -35,6 +36,7 @@
     "precss": "^1.4.0",
     "sinon": "^1.17.7",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   },

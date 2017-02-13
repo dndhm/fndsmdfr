@@ -27,6 +27,10 @@ module.exports = {
         loader: require.resolve('babel-loader'),
         exclude: /node_modules/,
       },
+      {
+        test: /\.png$/,
+        loader: 'url-loader',
+      },
     ],
   },
   plugins: [
