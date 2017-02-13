@@ -28,7 +28,7 @@ class Application extends Component {
   }
 
   static defaultProps = {
-    foodThreshold: 300,
+    foodThreshold: 200,
   }
 
   state = {
