@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import lowlight from 'lowlight';
+
 require('./style.css');
 
-class Input extends Component {
+class Terminal extends Component {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
     value: PropTypes.string,
@@ -11,12 +13,17 @@ class Input extends Component {
     document.getElementById('input').addEventListener('keypress', this.handleKeypress);
   }
 
+  componentWillReceiveProps ({ value }) {
+    const highlightedValue = lowlight.highlightAuto(value).value;
+    console.log("highlightedValue", highlightedValue);
+  }
+
   componentWillUnmount () {
     document.getElementById('input').removeEventListener('keypress');
   }
 
   handleKeypress = (event) => {
-    const pattern = new RegExp(/^[a-z0-9]+$/i);
+    const pattern = new RegExp(/^([a-zA-Z0-9. !(){}'=<>|;&/\+-\\])+$/);
     if (!pattern.test(event.key)) {
       event.preventDefault();
     }
@@ -32,7 +39,6 @@ class Input extends Component {
           id="input"
           onChange={this.props.onChange}
           ref={this.focus}
-          value={this.props.value}
         ></input>
         <label
           className="label"
@@ -46,4 +52,4 @@ class Input extends Component {
   }
 }
 
-export default Input;
+export default Terminal;

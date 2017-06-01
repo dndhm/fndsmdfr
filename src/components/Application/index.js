@@ -1,26 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import classnames from 'classnames';
 
 import Food from '../Food';
 import Terminal from '../Terminal';
-import styles from './style.css';
 
-const CodeFormat = props => {
-  const colorStyle = styles['format-' + props.color];
-
-  return (
-    <span
-      className={classnames(['codeFormat', colorStyle])}
-    >
-      {props.children}
-    </span>
-  );
-};
-
-CodeFormat.propTypes = {
-  children: PropTypes.node,
-  color: PropTypes.string,
-};
+require('./style.css');
 
 class Application extends Component {
   static propTypes = {
@@ -72,7 +55,7 @@ class Application extends Component {
     },
   }
 
-  inputChange = event => {
+  terminalChange = event => {
     if (this.state.showFood) {
       return;
     }
@@ -85,22 +68,20 @@ class Application extends Component {
     const truncated = value > 1000
       ? value.slice(value.length - 1000, value.length)
       : value;
+    const formattedValue = divisibleFormat
+      ? this.formats[divisibleFormat].fn(truncated)
+      : truncated;
 
-    if (divisibleFormat) {
-      this.setState({
-        value: this.formats[divisibleFormat].fn(truncated),
-      });
-    } else {
-      this.setState({
-        value: truncated,
-      });
-    }
+    this.setState({
+      value: formattedValue,
+    });
 
     if (this.state.value.length > 0
       && this.state.value.length % this.props.foodThreshold === 0) {
       this.setState({
         showFood: true,
       });
+
       setTimeout(() => {
         this.setState({
           showFood: false,
@@ -113,7 +94,7 @@ class Application extends Component {
     return (
       <main ref="main">
         <Terminal
-          onChange={this.inputChange}
+          onChange={this.terminalChange}
           value={this.state.value}
         />
 

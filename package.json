@@ -4,6 +4,7 @@
   "description": "Felix Needham Diatonic Super Mutating Dynamic Food Replicator",
   "main": "index.js",
   "dependencies": {
+    "lowlight": "^1.8.0",
     "normalize.css": "^4.2.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
